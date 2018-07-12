@@ -1,6 +1,6 @@
 {
-  "name": "cz-conventional-changelog",
-  "version": "0.0.0-semantically-released.0",
+  "name": "cz-conventional-changelog-ja",
+  "version": "0.0.1",
   "description": "Commitizen adapter following the conventional-changelog format.",
   "main": "index.js",
   "scripts": {
@@ -8,15 +8,14 @@
     "test": "echo 'Tests need to be setup!'",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "homepage": "https://github.com/commitizen/cz-conventional-changelog",
+  "homepage": "https://github.com/AquiTCD/cz-conventional-changelog-ja",
   "repository": {
     "type": "git",
-    "url": "https://github.com/commitizen/cz-conventional-changelog.git"
+    "url": "https://github.com/AquiTCD/cz-conventional-changelog-ja.git"
   },
-  "author": "Jim Cummins <jimthedev@gmail.com>",
+  "author": "Aqui TSUCHIDA <aqui.tcd+dev@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "conventional-commit-types": "^2.0.0",
     "lodash.map": "^4.5.1",
     "longest": "^1.0.1",
     "right-pad": "^1.0.1",
