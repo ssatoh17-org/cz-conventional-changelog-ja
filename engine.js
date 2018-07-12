@@ -39,7 +39,7 @@ module.exports = function (options) {
     // By default, we'll de-indent your commit
     // template and will keep empty lines.
     prompter: function(cz, commit) {
-      console.log('\nLine 1 will be cropped at 100 characters. All other lines will be wrapped after 100 characters.\n');
+      console.log('\n1行目は100文字で切り取られます。100文字を超過した分は他の行に送られます。\n');
 
       // Let's ask some questions of the user
       // so that we can populate our commit
@@ -52,41 +52,41 @@ module.exports = function (options) {
         {
           type: 'list',
           name: 'type',
-          message: 'Select the type of change that you\'re committing:',
+          message: 'コミットする変更のタイプを選択:',
           choices: choices
         }, {
           type: 'input',
           name: 'scope',
-          message: 'What is the scope of this change (e.g. component or file name)? (press enter to skip)\n'
+          message: 'この変更のスコープは？(例:コンポーネントやファイル名)？（enterでスキップ）\n'
         }, {
           type: 'input',
           name: 'subject',
-          message: 'Write a short, imperative tense description of the change:\n'
+          message: '要約された変更内容の本質的説明:\n'
         }, {
           type: 'input',
           name: 'body',
-          message: 'Provide a longer description of the change: (press enter to skip)\n'
+          message: '変更内容の詳細:（enterでスキップ）\n'
         }, {
           type: 'confirm',
           name: 'isBreaking',
-          message: 'Are there any breaking changes?',
+          message: '破壊的変更がありますか？',
           default: false
         }, {
           type: 'input',
           name: 'breaking',
-          message: 'Describe the breaking changes:\n',
+          message: '破壊的変更についての記述:\n',
           when: function(answers) {
             return answers.isBreaking;
           }
         }, {
           type: 'confirm',
           name: 'isIssueAffected',
-          message: 'Does this change affect any open issues?',
+          message: 'この変更はopenなissueのどれかに影響がありますか？',
           default: false
         }, {
           type: 'input',
           name: 'issues',
-          message: 'Add issue references (e.g. "fix #123", "re #123".):\n',
+          message: '関連issue番号を追加 (例:"fix #123", "re #123"):\n',
           when: function(answers) {
             return answers.isIssueAffected;
           }
