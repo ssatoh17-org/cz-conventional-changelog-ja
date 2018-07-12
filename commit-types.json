@@ -1,0 +1,48 @@
+{
+  "types": {
+    "feat": {
+      "description": "新機能の追加",
+      "title": "機能"
+    },
+    "fix": {
+      "description": "バグ修正",
+      "title": "バグ修正"
+    },
+    "docs": {
+      "description": "ドキュメントのみ変更",
+      "title": "ドキュメント"
+    },
+    "style": {
+      "description": "コードの動作を変更しない書き方スタイルの変更（スペース、フォーマット、セミコロンなど）",
+      "title": "スタイル"
+    },
+    "refactor": {
+      "description": "新機能の追加やバグ修正ではないリファクタリングによる変更",
+      "title": "リファクタ"
+    },
+    "perf": {
+      "description": "パフォーマンスの改善のための変更",
+      "title": "パフォーマンス改善"
+    },
+    "test": {
+      "description": "不足しているテストの追加や既存のテストの修正",
+      "title": "テスト"
+    },
+    "build": {
+      "description": "ビルドシステムや外部依存に関する変更（scope例: gulp, broccoli, npm）",
+      "title": "ビルド"
+    },
+    "ci": {
+      "description": "CI用の設定やスクリプトの変更（scope例: Travis, Circle, BrowserStack, SauceLabs)",
+      "title": "CI"
+    },
+    "chore": {
+      "description": "ソースやテストを修正しないその他の変更",
+      "title": "雑務"
+    },
+    "revert": {
+      "description": "以前のコミットに復帰",
+      "title": "復帰"
+    }
+  }
+}
