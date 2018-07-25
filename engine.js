@@ -39,7 +39,8 @@ module.exports = function (options) {
     // By default, we'll de-indent your commit
     // template and will keep empty lines.
     prompter: function(cz, commit) {
-      console.log('\n1行目は100文字で切り取られます。100文字を超過した分は他の行に送られます。\n');
+      // console.log('\nLine 1 will be cropped at 100 characters. All other lines will be wrapped after 100 characters.\n'); 
+      console.log('\n1行目は100文字で切り取られ、超過分は次行以降に記載されます。\n');
 
       // Let's ask some questions of the user
       // so that we can populate our commit
@@ -52,28 +53,34 @@ module.exports = function (options) {
         {
           type: 'list',
           name: 'type',
-          message: 'コミットする変更のタイプを選択:',
+          // message: 'Select the type of change that you\'re committing:',
+          message: 'コミットする変更タイプを選択:',
           choices: choices
         }, {
           type: 'input',
           name: 'scope',
-          message: 'この変更のスコープは？(例:コンポーネントやファイル名)？（enterでスキップ）\n'
+          // message: 'What is the scope of this change (e.g. component or file name)? (press enter to skip)\n'
+          message: '変更内容のスコープ(例:コンポーネントやファイル名):（enterでスキップ）\n'
         }, {
           type: 'input',
           name: 'subject',
-          message: '要約された変更内容の本質的説明:\n'
+          // message: 'Write a short, imperative tense description of the change:\n'
+          message: '変更内容を要約した本質的説明:\n'
         }, {
           type: 'input',
           name: 'body',
+          // message: 'Provide a longer description of the change: (press enter to skip)\n'
           message: '変更内容の詳細:（enterでスキップ）\n'
         }, {
           type: 'confirm',
           name: 'isBreaking',
-          message: '破壊的変更がありますか？',
+          // message: 'Are there any breaking changes?',
+          message: '破壊的変更を含みますか？',
           default: false
         }, {
           type: 'input',
           name: 'breaking',
+          // message: 'Describe the breaking changes:\n',
           message: '破壊的変更についての記述:\n',
           when: function(answers) {
             return answers.isBreaking;
@@ -81,12 +88,14 @@ module.exports = function (options) {
         }, {
           type: 'confirm',
           name: 'isIssueAffected',
-          message: 'この変更はopenなissueのどれかに影響がありますか？',
+          // message: 'Does this change affect any open issues?',
+          message: 'issueに関連した変更ですか？',
           default: false
         }, {
           type: 'input',
           name: 'issues',
-          message: '関連issue番号を追加 (例:"fix #123", "re #123"):\n',
+          // message: 'Add issue references (e.g. "fix #123", "re #123".):\n',
+          message: '関連issueを追記 (例:"fix #123", "re #123"):\n',
           when: function(answers) {
             return answers.isIssueAffected;
           }
