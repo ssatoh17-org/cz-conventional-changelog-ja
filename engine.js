@@ -21,7 +21,7 @@ module.exports = function (options) {
   var length = longest(Object.keys(types)).length + 1;
   var choices = map(types, function (type, key) {
     return {
-      name: rightPad(key + ':', length) + ' ' + type.description,
+      name: rightPad(key + ':', length) + ' ' + type.emoji + type.description,
       value: key
     };
   });
@@ -65,17 +65,17 @@ module.exports = function (options) {
           type: 'input',
           name: 'subject',
           // message: 'Write a short, imperative tense description of the change:\n'
-          message: '変更内容を要約した本質的説明:\n'
+          message: '変更内容を要約した本質的な説明:\n'
         }, {
           type: 'input',
           name: 'body',
           // message: 'Provide a longer description of the change: (press enter to skip)\n'
-          message: '変更内容の詳細:（enterでスキップ）\n'
+          message: '変更内容の詳細:※変更背景や変更理由等はここに記載（enterでスキップ）\n'
         }, {
           type: 'confirm',
           name: 'isBreaking',
           // message: 'Are there any breaking changes?',
-          message: '破壊的変更を含みますか？',
+          message: '破壊的変更を含みますか？(デフォルト:No)',
           default: false
         }, {
           type: 'input',
@@ -89,13 +89,13 @@ module.exports = function (options) {
           type: 'confirm',
           name: 'isIssueAffected',
           // message: 'Does this change affect any open issues?',
-          message: 'issueに関連した変更ですか？',
+          message: 'issueに関連した変更ですか？（デフォルト:No)',
           default: false
         }, {
           type: 'input',
           name: 'issues',
           // message: 'Add issue references (e.g. "fix #123", "re #123".):\n',
-          message: '関連issueを追記 (例:"fix #123", "re #123"):\n',
+          message: '関連issueを追記 (例:"#123", "fix #123", "re #123"):\n',
           when: function(answers) {
             return answers.isIssueAffected;
           }
@@ -116,7 +116,7 @@ module.exports = function (options) {
         scope = scope ? '(' + answers.scope.trim() + ')' : '';
 
         // Hard limit this line
-        var head = (answers.type + scope + ': ' + answers.subject.trim()).slice(0, maxLineWidth);
+        var head = (answers.type + scope + ': ' + types[answers.type].emoji + answers.subject.trim()).slice(0, maxLineWidth);
 
         // Wrap these lines at 100 characters
         var body = wrap(answers.body, wrapOptions);

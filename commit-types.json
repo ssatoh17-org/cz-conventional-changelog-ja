@@ -2,47 +2,58 @@
   "types": {
     "feat": {
       "description": "新機能",
-      "title": "機能"
+      "title": "機能😆",
+      "emoji": "✨"
     },
     "fix": {
       "description": "バグ修正",
-      "title": "バグ修正"
+      "title": "バグ修正",
+      "emoji": "🐛"
     },
     "docs": {
       "description": "ドキュメントのみの変更",
-      "title": "ドキュメント"
+      "title": "ドキュメント",
+      "emoji": "📚"
     },
     "style": {
-      "description": "フォーマットの変更（コードの動作に影響しないスペース、フォーマット、セミコロンなど）",
-      "title": "スタイル"
+      "description": "コードフォーマットの変更（コードの動作に影響しないスペース、フォーマット、セミコロンなど）",
+      "title": "スタイル",
+      "emoji": "🎨"
     },
     "refactor": {
       "description": "リファクタリングのための変更（機能追加やバグ修正を含まない）",
-      "title": "リファクタ"
+      "title": "リファクタ",
+        "emoji": "♻\uFE0F"
     },
     "perf": {
       "description": "パフォーマンスの改善のための変更",
-      "title": "パフォーマンス改善"
+      "title": "パフォーマンス改善",
+      "emoji": "🐎"
     },
     "test": {
       "description": "不足テストの追加や既存テストの修正",
-      "title": "テスト"
+      "title": "テスト",
+      "emoji": "🚨"
     },
     "build": {
       "description": "ビルドシステムや外部依存に関する変更（スコープ例: gulp, broccoli, npm）",
-      "title": "ビルド"
+      "title": "ビルド",
+      "emoji": "🛠"
     },
     "ci": {
       "description": "CI用の設定やスクリプトに関する変更（スコープ例: Travis, Circle, BrowserStack, SauceLabs)",
-      "title": "CI"
+      "title": "CI",
+      "emoji": "⚙️"
     },
     "chore": {
       "description": "その他の変更（ソースやテストの変更を含まない）",
-      "title": "雑務"
+      "title": "雑務",
+      "emoji": "🧹"
     },
     "revert": {
-      "description": "以前のコミットに復帰",
-      "title": "復帰"
+      "description": "以前のコミットに戻す",
+      "title": "復帰",
+      "emoji": "🔙"
     }
   }
 }
